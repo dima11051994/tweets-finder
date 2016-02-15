@@ -51,6 +51,12 @@ coverage.xml
 
 # Django stuff:
 *.log
+*.log
+*.pot
+*.pyc
+
+;;directories to ignore
+.idea/
 local_settings.py
 
 # Flask instance folder
