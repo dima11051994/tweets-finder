@@ -56,7 +56,7 @@ ROOT_URLCONF = 'hometask.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Python27/django/tweets-finder-master/hometask/templates'],
+        'DIRS': ['C:/Python27/django/hometask/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,6 +101,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-
-   ('static','C:/Python27/django/tweets-finder-master/hometask/static'),
+   ('static','C:/Python27/django/hometask/static'),
 )

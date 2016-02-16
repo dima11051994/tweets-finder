@@ -2,8 +2,7 @@
 {% load staticfiles %}
 
 {% block search %}
-<h1>You search: </h1><h1>{{query}}</h1>
-<h2>Positive <span>{{ positive|length }}</span></h2>
+<h2>Найдено положительных{{ positive|length }}. для {{query}}</h2>
 <div style="border: 2px solid green">
 {% for pos in positive %}
     <p class="clip">{{pos}}</p>
@@ -11,15 +10,15 @@
 {% endfor %}
 </div>
     <br>
-<h2>Neutral <span>{{ neutral|length }}</span></h2>
+<h2>Найдено нейтральных{{ neutral|length }}. для {{query}}</h2>
 
 <div style="border: 2px solid blue">
-{% for net in neutral %}
-    <p class="clip">{{net}}</p>
+{% for pos in neutral %}
+    <p class="clip">{{pos}}</p>
 	<hr>
 {% endfor %}
 </div><br>
-<h2>Negative <span>{{ negative|length }}</span></h2>
+<h2>Найдено отрицательных{{ negative|length }}. для {{query}}</h2>
 <div style="border: 2px solid red">
 {% for pos in negative %}
     <p class="clip">{{pos}}</p>

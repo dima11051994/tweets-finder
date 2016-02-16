@@ -35,17 +35,20 @@ def search(request):
 
             i=0
             for tweet in ts.search_tweets_iterable(tso):
-                if i==20:
+                if i==10:
                     break
                 r = requests.post("http://text-processing.com/api/sentiment/", data={'text': tweet['text']})
                 a =json.loads(r.content)
                 a =a['label']
                 if a == 'pos':
-		    positive.append(tweet['text'])
-		elif a=='neutral':
+                    positive.append(tweet['text'])
+                    print ('pos',tweet['text'])
+                elif a=='neutral':
                     neutral.append(tweet['text'])
+                    print('neutral',tweet['text'])
                 else :
                     negative.append(tweet['text'])
+                    print('neg',tweet['text'])
                 i+=1
         except TwitterSearchException as e: # take care of all those ugly errors if there are some
             print(e)
